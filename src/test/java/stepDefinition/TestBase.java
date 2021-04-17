@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import utils.Logs;
 
 import pages.CheckoutPage;
 import pages.CreateAccountPage;
@@ -29,9 +30,12 @@ public class TestBase {
 	protected static MyAccountPage myAccountPage;
 	protected static WomenPage womenPage;
 	protected static CheckoutPage checkoutPage;
+    protected Logs logs;
 
+	
 	public void startUp(String browserName, String platformName) {
-
+		
+        prepareLog();
 		setBrowserNameAndKey(browserName);
 		setPlatformNameAndBrowserPath(platformName);
 
@@ -45,9 +49,16 @@ public class TestBase {
 		
 		driver.manage().window().maximize();
 	}
+	
+	private void prepareLog() {
+        logs = new Logs();
+        logs.createLogFile();
+    }
+
 
 	public void tearDown() {
 		driver.close();
+        System.out.println("Run is finished. For more info, please check the log file in the following path: " + logs.getLogPath());
 	}
 
 	private boolean setBrowserNameAndKey(String browserName) {
@@ -67,8 +78,7 @@ public class TestBase {
 			browserKey = "webdriver.ie.driver";
 			return true;
 		} else {
-			System.out
-					.println("Browser:" + browserName + " is not correct. Browser can only be Chrome or Firefox or IE");
+	        logs.addLog("Error -> Browser:" + browserName + " is not correct. Browser can only be Chrome or Firefox or IE");
 			return false;
 		}
 	}
@@ -91,8 +101,7 @@ public class TestBase {
 			setBrowserPath();
 			return true;
 		} else {
-			System.out.println(
-					"Plaform:" + platfromName + " is not correct. Platform can only be Windows or Mac or Linux");
+			logs.addLog("Error -> Plaform:" + platfromName + " is not correct. Platform can only be Windows or Mac or Linux");
 			return false;
 		}
 	}

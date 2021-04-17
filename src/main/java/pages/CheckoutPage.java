@@ -18,11 +18,24 @@ public class CheckoutPage extends BasePage {
 
 	public boolean compareItemNamesAndPrices() {
 		fillActualItemNamesAndPriceLists();
+		
+		logs.addLog("Info: Compare between items names (Expected) vs (Actual)");
+		logs.addLog("Info: Expected Items Names -> "+expectedItemNameList.toString());
+		logs.addLog("Info: Actual Items Names -> "+actualItemNameList.toString());
+		
+		logs.addLog("Info: Expected Items Prices -> "+expectedItemPriceList.toString());
+		logs.addLog("Info: Actual Items Prices -> "+actualItemPriceList.toString());
 
-		if (expectedItemNameList.equals(actualItemNameList) && expectedItemPriceList.equals(actualItemPriceList))
+
+		
+		if (expectedItemNameList.equals(actualItemNameList) && expectedItemPriceList.equals(actualItemPriceList)) {
+			logs.addLog("Info: Expected = Actual");
 			return true;
-		else
+		}
+		else {
+			logs.addLog("Info: There is a difference between expected and actual. Please check the above expected & actual lists");
 			return false;
+		}
 	}
 
 	private void fillActualItemNamesAndPriceLists() {

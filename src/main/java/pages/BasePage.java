@@ -6,6 +6,7 @@ package pages;
 
 import java.util.ArrayList;
 import java.util.Random;
+import utils.Logs;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,13 @@ public class BasePage {
 	public static int numberOfResults;
 	public final int WAITTIME = 10;
 	public WebDriver driver;
+    protected Logs logs;
 
+
+	public BasePage() {
+		logs = new Logs();
+	}
+	
 	public String getRandomStringOfCharaters(int length) {
 
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";

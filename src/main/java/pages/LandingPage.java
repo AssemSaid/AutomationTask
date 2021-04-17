@@ -17,6 +17,8 @@ public class LandingPage extends BasePage {
 	}
 
 	public SignInPage clickSignIn() {
+		logs.addLog("Info: Click (Signin) button");
+		
 		driver.findElement(signInButton).click();
 		return new SignInPage(driver);
 	}

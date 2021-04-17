@@ -24,6 +24,8 @@ public class WomenPage extends BasePage {
 	public void addItemsInStock() {
 		clickListIcon();
 		numberOfResults = getNumberOfResultsFromText(productCountLabel);
+		
+		logs.addLog("Info: Number of items shown in the grid is "+ numberOfResults);
 
 		for (int i = 1; i <= numberOfResults; i++) {
 			By addToCart = By.xpath("(//a[@title='Add to cart'])[" + i + "]");
@@ -34,7 +36,9 @@ public class WomenPage extends BasePage {
 			String priceInString = driver.findElement(productPriceLabel).getText();
 			float priceInFloat = Float.parseFloat(priceInString.substring(1));
 			expectedItemPriceList.add(priceInFloat);
-
+			
+			logs.addLog("Info: Item no. ("+i+") is added to the Cart successfully");
+			
 			if (i == numberOfResults)
 				break;
 			else
@@ -44,17 +48,21 @@ public class WomenPage extends BasePage {
 
 	private void clickContinueShopping() {
 		driver.findElement(continueShoppingButton).click();
-		;
+		logs.addLog("Info: Click on (Continue Shopping) button");
 	}
 
 	public CheckoutPage clickCheckout() {
 		driver.findElement(proceedToCheckoutButton).click();
+		
+		logs.addLog("Info: Click on (Proceed To Checkout) button");
+		
 		return new CheckoutPage(driver);
 	}
 
 	private void clickListIcon() {
 		driver.findElement(listIcon).click();
-
+		
+		logs.addLog("Info: Click on (List) icon");
 	}
 
 	private int getNumberOfResultsFromText(By locator) {

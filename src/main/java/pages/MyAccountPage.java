@@ -7,7 +7,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MyAccountPage {
+public class MyAccountPage extends BasePage{
 
 	public WebDriver driver;
 	private By womenTab = By.xpath("//a[@title='Women']");
@@ -18,6 +18,9 @@ public class MyAccountPage {
 
 	public WomenPage clickWomenSection() {
 		driver.findElement(womenTab).click();
+		
+		logs.addLog("Info: Click on (Women) tab");
+		
 		return new WomenPage(driver);
 	}
 

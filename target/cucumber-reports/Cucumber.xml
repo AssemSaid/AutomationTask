@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="51.928">
+    <testcase classname="Adding items to Cart function" name="Cart has correct items and total amount" time="51.168">
+        <system-out><![CDATA[Given User is on Landing page using "chrome" browser on "Windows" platform..passed
+When User creates an account................................................passed
+And User navigates to Women section.........................................passed
+And User adds items to Cart.................................................passed
+Then check Cart has correct items and amount................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
