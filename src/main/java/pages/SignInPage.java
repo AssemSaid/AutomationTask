@@ -1,9 +1,11 @@
+/**
+ *@author: assem.said2010@gmail.com
+ *@Date: 17/4/2021
+ */
 package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInPage extends BasePage {
 
@@ -18,9 +20,8 @@ public class SignInPage extends BasePage {
 		this.driver = driver;
 	}
 
-	
 	public void enterRadomEmail() {
-		waitUnitElementIsVisible(driver,emailField,WAITTIME);
+		waitUnitElementIsVisible(driver, emailField, WAITTIME);
 		driver.findElement(emailField).sendKeys(getGeneratedEmail());
 	}
 

@@ -1,9 +1,11 @@
+/**
+ *@author: assem.said2010@gmail.com
+ *@Date: 17/4/2021
+ */
 package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WomenPage extends BasePage {
 
@@ -15,8 +17,6 @@ public class WomenPage extends BasePage {
 	private By continueShoppingButton = By.xpath("//span[@title='Continue shopping']");
 	private By proceedToCheckoutButton = By.xpath("//a[@title='Proceed to checkout']");
 
-
-	
 	public WomenPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -25,11 +25,10 @@ public class WomenPage extends BasePage {
 		clickListIcon();
 		numberOfResults = getNumberOfResultsFromText(productCountLabel);
 
-
 		for (int i = 1; i <= numberOfResults; i++) {
 			By addToCart = By.xpath("(//a[@title='Add to cart'])[" + i + "]");
 			driver.findElement(addToCart).click();
-			waitUnitElementIsVisible(driver,productNameLabel,WAITTIME);
+			waitUnitElementIsVisible(driver, productNameLabel, WAITTIME);
 			expectedItemNameList.add(driver.findElement(productNameLabel).getText());
 
 			String priceInString = driver.findElement(productPriceLabel).getText();
@@ -44,7 +43,8 @@ public class WomenPage extends BasePage {
 	}
 
 	private void clickContinueShopping() {
-		driver.findElement(continueShoppingButton).click();;
+		driver.findElement(continueShoppingButton).click();
+		;
 	}
 
 	public CheckoutPage clickCheckout() {

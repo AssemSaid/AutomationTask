@@ -1,3 +1,7 @@
+/**
+ *@author: assem.said2010@gmail.com
+ *@Date: 17/4/2021
+ */
 package pages;
 
 import java.util.ArrayList;
@@ -7,7 +11,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 public class BasePage {
 
@@ -19,7 +22,6 @@ public class BasePage {
 	public final int WAITTIME = 10;
 	public WebDriver driver;
 
-	
 	public String getRandomStringOfCharaters(int length) {
 
 		String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -37,7 +39,7 @@ public class BasePage {
 
 		return sb.toString();
 	}
-	
+
 	protected void waitUnitElementIsVisible(WebDriver driver, By locator, int timeInSeconds) {
 		this.driver = driver;
 		WebDriverWait wait = new WebDriverWait(driver, timeInSeconds);

@@ -1,12 +1,14 @@
+/**
+ *@author: assem.said2010@gmail.com
+ *@Date: 17/4/2021
+ */
 package pages;
 
 import java.security.SecureRandom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateAccountPage extends BasePage {
 
@@ -48,7 +50,7 @@ public class CreateAccountPage extends BasePage {
 		driver.findElement(submitButton).click();
 		return new MyAccountPage(driver);
 	}
-	
+
 	private void setTitle() {
 		waitUnitElementIsVisible(driver, mrsGenederRadioButton, WAITTIME);
 		driver.findElement(mrsGenederRadioButton).click();
