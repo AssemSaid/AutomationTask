@@ -1,0 +1,94 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-17T01:42:09.358Z",
+        "line": 5,
+        "name": "Cart has correct items and total amount",
+        "description": "",
+        "id": "adding-items-to-cart-function;cart-has-correct-items-and-total-amount",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 12253087100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User is on Landing page using \"chrome\" browser on \"Windows\" platform",
+            "match": {
+              "arguments": [
+                {
+                  "val": "chrome",
+                  "offset": 31
+                },
+                {
+                  "val": "Windows",
+                  "offset": 51
+                }
+              ],
+              "location": "stepDefinition.StepDefinition.user_is_on_landing_page_using_something_browser_on_something_platform(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11562676200,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User creates an account",
+            "match": {
+              "location": "stepDefinition.StepDefinition.user_creates_an_account()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3365840800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User navigates to Women section",
+            "match": {
+              "location": "stepDefinition.StepDefinition.user_navigates_to_women_section()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16717227800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User adds items to Cart",
+            "match": {
+              "location": "stepDefinition.StepDefinition.user_adds_items_to_cart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1904479600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "check Cart has correct items and amount",
+            "match": {
+              "location": "stepDefinition.StepDefinition.check_cart_has_correct_items_and_amount()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Adding items to Cart function",
+    "description": "",
+    "id": "adding-items-to-cart-function",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/AddToCart.feature",
+    "tags": []
+  }
+]
